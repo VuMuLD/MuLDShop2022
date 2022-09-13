@@ -2,18 +2,18 @@ package model;
 
 public class SanPham {
 
-    private String ma_san_pham;
-    private DanhMuc danhMuc;
+    private int ma_san_pham;
+    private DanhMuc ma_danh_muc;
     private String ten_san_pham;
     private String hinh_anh;
     private int so_luong;
     private String mo_ta;
-    private double don_gia;
+    private int don_gia;
     private int giam_gia;
 
-    public SanPham(String ma_san_pham, DanhMuc danhMuc, String ten_san_pham, String hinh_anh, int so_luong, String mo_ta, double don_gia, int giam_gia) {
+    public SanPham(int ma_san_pham, DanhMuc ma_danh_muc, String ten_san_pham, String hinh_anh, int so_luong, String mo_ta, int don_gia, int giam_gia) {
         this.ma_san_pham = ma_san_pham;
-        this.danhMuc = danhMuc;
+        this.ma_danh_muc = ma_danh_muc;
         this.ten_san_pham = ten_san_pham;
         this.hinh_anh = hinh_anh;
         this.so_luong = so_luong;
@@ -22,20 +22,20 @@ public class SanPham {
         this.giam_gia = giam_gia;
     }
 
-    public String getMa_san_pham() {
+    public int getMa_san_pham() {
         return ma_san_pham;
     }
 
-    public void setMa_san_pham(String ma_san_pham) {
+    public void setMa_san_pham(int ma_san_pham) {
         this.ma_san_pham = ma_san_pham;
     }
 
-    public DanhMuc getDanhMuc() {
-        return danhMuc;
+    public DanhMuc getMa_danh_muc() {
+        return ma_danh_muc;
     }
 
-    public void setDanhMuc(DanhMuc danhMuc) {
-        this.danhMuc = danhMuc;
+    public void setMa_danh_muc(DanhMuc ma_danh_muc) {
+        this.ma_danh_muc = ma_danh_muc;
     }
 
     public String getTen_san_pham() {
@@ -70,11 +70,11 @@ public class SanPham {
         this.mo_ta = mo_ta;
     }
 
-    public double getDon_gia() {
+    public int getDon_gia() {
         return don_gia;
     }
 
-    public void setDon_gia(double don_gia) {
+    public void setDon_gia(int don_gia) {
         this.don_gia = don_gia;
     }
 

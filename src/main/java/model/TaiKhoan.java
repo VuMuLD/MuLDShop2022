@@ -3,18 +3,18 @@ package model;
 import java.util.Date;
 
 public class TaiKhoan {
-    private String ma_tai_khoan;
+    private int ma_tai_khoan;
     private String ten_tai_khoan;
     private String ten_dang_nhap;
     private String mat_khau;
-    private String quyen_truy_cap;
+    private boolean quyen_truy_cap;
     private String dia_chi;
     private String so_dien_thoai;
     private Date ngay_sinh;
     private boolean gioi_tinh;
     private boolean tinh_trang;
 
-    public TaiKhoan(String ma_tai_khoan, String ten_tai_khoan, String ten_dang_nhap, String mat_khau, String quyen_truy_cap, String dia_chi, String so_dien_thoai, Date ngay_sinh, boolean gioi_tinh, boolean tinh_trang) {
+    public TaiKhoan(int ma_tai_khoan, String ten_tai_khoan, String ten_dang_nhap, String mat_khau, boolean quyen_truy_cap, String dia_chi, String so_dien_thoai, Date ngay_sinh, boolean gioi_tinh, boolean tinh_trang) {
         this.ma_tai_khoan = ma_tai_khoan;
         this.ten_tai_khoan = ten_tai_khoan;
         this.ten_dang_nhap = ten_dang_nhap;
@@ -27,11 +27,11 @@ public class TaiKhoan {
         this.tinh_trang = tinh_trang;
     }
 
-    public String getMa_tai_khoan() {
+    public int getMa_tai_khoan() {
         return ma_tai_khoan;
     }
 
-    public void setMa_tai_khoan(String ma_tai_khoan) {
+    public void setMa_tai_khoan(int ma_tai_khoan) {
         this.ma_tai_khoan = ma_tai_khoan;
     }
 
@@ -59,11 +59,11 @@ public class TaiKhoan {
         this.mat_khau = mat_khau;
     }
 
-    public String getQuyen_truy_cap() {
+    public boolean isQuyen_truy_cap() {
         return quyen_truy_cap;
     }
 
-    public void setQuyen_truy_cap(String quyen_truy_cap) {
+    public void setQuyen_truy_cap(boolean quyen_truy_cap) {
         this.quyen_truy_cap = quyen_truy_cap;
     }
 

@@ -1,21 +1,21 @@
 package model;
 
 public class DanhMuc {
-    private String ma_danh_muc;
+    private int ma_danh_muc;
     private String ten_danh_muc;
     private String danh_muc_cha;
 
-    public DanhMuc(String ma_danh_muc, String ten_danh_muc, String danh_muc_cha) {
+    public DanhMuc() {
         this.ma_danh_muc = ma_danh_muc;
         this.ten_danh_muc = ten_danh_muc;
         this.danh_muc_cha = danh_muc_cha;
     }
 
-    public String getMa_danh_muc() {
+    public int getMa_danh_muc() {
         return ma_danh_muc;
     }
 
-    public void setMa_danh_muc(String ma_danh_muc) {
+    public void setMa_danh_muc(int ma_danh_muc) {
         this.ma_danh_muc = ma_danh_muc;
     }
 
