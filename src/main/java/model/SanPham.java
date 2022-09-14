@@ -22,6 +22,9 @@ public class SanPham {
         this.giam_gia = giam_gia;
     }
 
+    public SanPham(int anInt, int anInt1, String string, double aDouble, String string1, String string2) {
+    }
+
     public int getMa_san_pham() {
         return ma_san_pham;
     }
