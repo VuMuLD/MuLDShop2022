@@ -1,6 +1,6 @@
 package dao;
 
-import Connect.DBConnect;
+import Context.DBContext;
 import model.DanhMuc;
 
 import java.sql.Connection;
@@ -18,7 +18,7 @@ public class DAO {
         List<DanhMuc> list = new ArrayList<>();
         String query = "select * from danh_muc Where danh_muc_cha = '"+ma_danh_muc+"'";
         try {
-            conn = new DBConnect().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {

@@ -39,8 +39,8 @@
             <div class="row">
                 <div class="col-sm-2">
                     <div class="companyinfo">
-                        <h2><span>e</span>-shopper</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+                        <h2><span>M</span>uLD Shop</h2>
+                        <p>MuLD Shop</p>
                     </div>
                 </div>
                 <div class="col-sm-7">
@@ -55,7 +55,7 @@
                                 </div>
                             </a>
                             <p>Circle of Hands</p>
-                            <h2>24 DEC 2014</h2>
+                            <h2>24 DEC 2022</h2>
                         </div>
                     </div>
 
@@ -70,7 +70,7 @@
                                 </div>
                             </a>
                             <p>Circle of Hands</p>
-                            <h2>24 DEC 2014</h2>
+                            <h2>24 DEC 2022</h2>
                         </div>
                     </div>
 
