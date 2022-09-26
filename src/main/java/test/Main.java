@@ -1,10 +1,10 @@
 package test;
 
-import dao.DAO;
+import dao.SanPhamDAOImpl;
 
 public class Main {
     public static void main(String[] args) {
-        DAO sp = new DAO();
-        System.out.println(sp.getDanhMuc("1").size());
+        SanPhamDAOImpl sp = new SanPhamDAOImpl();
+        System.out.println(sp.getListProductByCategory(Integer.parseInt("5")).size());
     }
 }

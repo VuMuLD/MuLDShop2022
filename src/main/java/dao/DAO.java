@@ -14,20 +14,17 @@ public class DAO {
     PreparedStatement ps = null;
     ResultSet rs = null;
 
-    public List<DanhMuc> getDanhMuc(String ma_danh_muc) {
+    public List<DanhMuc> getListDanhMuc(String ten_danh_muc) {
         List<DanhMuc> list = new ArrayList<>();
-        String query = "select * from danh_muc Where danh_muc_cha = '"+ma_danh_muc+"'";
+        String query = "select * from danh_muc Where danh_muc_cha = 'null'";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new DanhMuc(
-                                rs.getInt(1),
-                                rs.getString(2),
-                                rs.getString(3)
 
-                        )
+                        rs.getInt("ma_danh_muc"), "", "")
                 );
             }
         } catch (Exception e) {

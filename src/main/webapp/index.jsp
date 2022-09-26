@@ -28,6 +28,7 @@
 
 <jsp:include page="header.jsp"></jsp:include>
 <jsp:include page="slider.jsp"></jsp:include>
+
 <section>
     <div class="container">
         <div class="row">
@@ -35,8 +36,8 @@
             <jsp:include page="product.jsp"></jsp:include>
         </div>
     </div>
-
 </section>
+
 <jsp:include page="footer.jsp"></jsp:include>
 
 </body>

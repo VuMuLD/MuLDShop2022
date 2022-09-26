@@ -5,8 +5,8 @@ public class DanhMuc {
     private String ten_danh_muc;
     private String danh_muc_cha;
 
-    public DanhMuc(int anInt, String string, String rsString) {
-        this.ma_danh_muc = ma_danh_muc;
+    public DanhMuc(int ma_danh_muc, String s, String s1) {
+        this.ma_danh_muc = this.ma_danh_muc;
         this.ten_danh_muc = ten_danh_muc;
         this.danh_muc_cha = danh_muc_cha;
     }

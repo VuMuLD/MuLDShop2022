@@ -11,7 +11,7 @@ public class SanPham {
     private int don_gia;
     private int giam_gia;
 
-    public SanPham(int ma_san_pham, DanhMuc ma_danh_muc, String ten_san_pham, String hinh_anh, int so_luong, String mo_ta, int don_gia, int giam_gia) {
+    public SanPham() {
         this.ma_san_pham = ma_san_pham;
         this.ma_danh_muc = ma_danh_muc;
         this.ten_san_pham = ten_san_pham;
@@ -20,9 +20,6 @@ public class SanPham {
         this.mo_ta = mo_ta;
         this.don_gia = don_gia;
         this.giam_gia = giam_gia;
-    }
-
-    public SanPham(int anInt, int anInt1, String string, double aDouble, String string1, String string2) {
     }
 
     public int getMa_san_pham() {

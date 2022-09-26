@@ -1,36 +1,81 @@
-
 package Context;
 
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DBContext {
 
-    /*USE BELOW METHOD FOR YOUR DATABASE CONNECTION FOR BOTH SINGLE AND MULTILPE SQL SERVER INSTANCE(s)*/
-    /*DO NOT EDIT THE BELOW METHOD, YOU MUST USE ONLY THIS ONE FOR YOUR DATABASE CONNECTION*/
-    public Connection getConnection()throws Exception {
-        String url = "jdbc:mysql://"+serverName+":"+portNumber + "\\" + instance +";databaseName="+dbName;
-        if(instance == null || instance.trim().isEmpty())
-            url = "jdbc:mysql://"+serverName+":"+portNumber +";databaseName="+dbName;
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        return DriverManager.getConnection(url, userID, password);
-    }
-    /*Insert your other code right after this comment*/
-    /*Change/update information of your database connection, DO NOT change name of instance variables in this class*/
-    private final String serverName = "localhost";
-    private final String dbName = "muldshop";
-    private final String portNumber = "3306";
-    private final String instance="";//LEAVE THIS ONE EMPTY IF YOUR SQL IS A SINGLE INSTANCE
-    private final String userID = "root";
-    private final String password = "123456";
+    private static DBContext instance;
 
-    public static void main(String[] args) {
+    public DBContext() {
+
+    }
+
+    public static DBContext getInstance() {
+        if (instance == null) {
+            synchronized (DBContext.class) {
+                if (instance == null) {
+                    instance = new DBContext();
+                }
+            }
+        }
+        return instance;
+    }
+
+
+    public Connection getConnection() {
+        Connection connection = null;
         try {
-            System.out.println(new DBContext().getConnection());
-        } catch (Exception e) {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/muldshop";
+            String username = "root";
+            String password = "123456";
+            connection = DriverManager.getConnection(url, username, password);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return connection;
+    }
+
+
+    public void closeConnection(Connection con) { // đóng kết nối
+        if (con != null) {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.err.println(ex);
+            }
+        }
+    }
+
+    /**
+     * Close PrepareStatement to MSSQL Sever
+     *
+     * @param ps
+     */
+    public void closePreparedStatement(PreparedStatement ps) { // đóng biên dịch sql
+        if (ps != null) {
+            try {
+                ps.close();
+            } catch (SQLException ex) {
+                System.err.println("Close PreparedStatement Fail!");
+            }
+        }
+    }
+
+    /**
+     * Close ResultSet to MSSQL Sever
+     *
+     * @param rs
+     */
+    public void closeResultSet(ResultSet rs) {
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException ex) {
+                System.err.println("Close PreparedStatement Fail!");
+            }
         }
     }
 }
- 
